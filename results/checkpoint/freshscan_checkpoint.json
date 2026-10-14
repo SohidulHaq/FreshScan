@@ -1,0 +1,312 @@
+{
+  "freshscan_checkpoint_version": 2,
+  "created": "2026-10-08 15:00:53",
+  "protocol": "leave_one_drive_out",
+  "freshscan": {
+    "d_max": 1.0,
+    "fit_reset": 0.5,
+    "icp_backend": "auto",
+    "icp_iters": 50,
+    "lidar_period_s": "auto",
+    "m": 2,
+    "n": 3,
+    "percentile": 99.0,
+    "period_s": 0.1,
+    "r_max": 60.0,
+    "r_min": 3.0,
+    "seam_alarm_fpr": 0.001,
+    "smooth_frames": 3,
+    "target_fpr": 0.01,
+    "v0": 3.0,
+    "v_min": 2.0,
+    "voxel": 0.5,
+    "w0": 0.05
+  },
+  "replay": {
+    "ages_s": [
+      5,
+      10,
+      30
+    ],
+    "gap_s": 10.0,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "win_max_s": 10.0,
+    "win_min_s": 2.0
+  },
+  "calibration_drives": [
+    "2011_09_30_drive_0020",
+    "2011_09_30_drive_0033",
+    "2011_10_03_drive_0042"
+  ],
+  "test_drives": [
+    "2011_09_30_drive_0018",
+    "2011_09_30_drive_0027",
+    "2011_09_30_drive_0034",
+    "2011_10_03_drive_0027"
+  ],
+  "methods": {
+    "B2: Seam only": [
+      "one_minus_fit",
+      "rmse"
+    ],
+    "B3: Residuals only": [
+      "r_v",
+      "r_w"
+    ],
+    "FreshScan": [
+      "r_v",
+      "r_w",
+      "one_minus_fit",
+      "rmse"
+    ]
+  },
+  "folds": {
+    "2011_09_30_drive_0018": {
+      "calibration_drives": [
+        "2011_09_30_drive_0020",
+        "2011_09_30_drive_0033",
+        "2011_10_03_drive_0042",
+        "2011_09_30_drive_0027",
+        "2011_09_30_drive_0034",
+        "2011_10_03_drive_0027"
+      ],
+      "lidar_period_s": 0.10369551181793213,
+      "scales": {
+        "B2: Seam only": [
+          0.08921774829627699,
+          0.34725641558066656
+        ],
+        "B3: Residuals only": [
+          0.12394214438858582,
+          0.26394569188647193
+        ],
+        "FreshScan": [
+          0.12394214438858582,
+          0.26394569188647193,
+          0.08921774829627699,
+          0.34725641558066656
+        ]
+      },
+      "thresholds": {
+        "B2: Seam only": 1.042497502381344,
+        "B3: Residuals only": 1.3249986329440513,
+        "FreshScan": 1.3797308020566037,
+        "B1: Timestamp check": 0.0005352854728711164,
+        "seam_alarm": 1.385997535383161
+      }
+    },
+    "2011_09_30_drive_0027": {
+      "calibration_drives": [
+        "2011_09_30_drive_0020",
+        "2011_09_30_drive_0033",
+        "2011_10_03_drive_0042",
+        "2011_09_30_drive_0018",
+        "2011_09_30_drive_0034",
+        "2011_10_03_drive_0027"
+      ],
+      "lidar_period_s": 0.1037214994430471,
+      "scales": {
+        "B2: Seam only": [
+          0.08761713040428731,
+          0.3458339564052001
+        ],
+        "B3: Residuals only": [
+          0.11491808543160772,
+          0.2606833573067846
+        ],
+        "FreshScan": [
+          0.11491808543160772,
+          0.2606833573067846,
+          0.08761713040428731,
+          0.3458339564052001
+        ]
+      },
+      "thresholds": {
+        "B2: Seam only": 1.04171566054688,
+        "B3: Residuals only": 1.25803748970052,
+        "FreshScan": 1.3350401291383898,
+        "B1: Timestamp check": 0.0006834220886301531,
+        "seam_alarm": 1.4180135421258935
+      }
+    },
+    "2011_09_30_drive_0034": {
+      "calibration_drives": [
+        "2011_09_30_drive_0020",
+        "2011_09_30_drive_0033",
+        "2011_10_03_drive_0042",
+        "2011_09_30_drive_0018",
+        "2011_09_30_drive_0027",
+        "2011_10_03_drive_0027"
+      ],
+      "lidar_period_s": 0.10374224185941472,
+      "scales": {
+        "B2: Seam only": [
+          0.08754376986961072,
+          0.34585441246680027
+        ],
+        "B3: Residuals only": [
+          0.11754814695198035,
+          0.2587187664699583
+        ],
+        "FreshScan": [
+          0.11754814695198035,
+          0.2587187664699583,
+          0.08754376986961072,
+          0.34585441246680027
+        ]
+      },
+      "thresholds": {
+        "B2: Seam only": 1.0412698532889015,
+        "B3: Residuals only": 1.3457051784344987,
+        "FreshScan": 1.4121345162296857,
+        "B1: Timestamp check": 0.0006773757934887221,
+        "seam_alarm": 1.421500681798789
+      }
+    },
+    "2011_10_03_drive_0027": {
+      "calibration_drives": [
+        "2011_09_30_drive_0020",
+        "2011_09_30_drive_0033",
+        "2011_10_03_drive_0042",
+        "2011_09_30_drive_0018",
+        "2011_09_30_drive_0027",
+        "2011_09_30_drive_0034"
+      ],
+      "lidar_period_s": 0.10384917259216309,
+      "scales": {
+        "B2: Seam only": [
+          0.0922924790110019,
+          0.34904140453556587
+        ],
+        "B3: Residuals only": [
+          0.15431304577460472,
+          0.24479917657634426
+        ],
+        "FreshScan": [
+          0.15431304577460472,
+          0.24479917657634426,
+          0.0922924790110019,
+          0.34904140453556587
+        ]
+      },
+      "thresholds": {
+        "B2: Seam only": 1.0468274212591535,
+        "B3: Residuals only": 1.2310743672824591,
+        "FreshScan": 1.2952247710556122,
+        "B1: Timestamp check": 0.0005954003334045399,
+        "seam_alarm": 1.3537143954342075
+      }
+    },
+    "all": {
+      "calibration_drives": [
+        "2011_09_30_drive_0018",
+        "2011_09_30_drive_0020",
+        "2011_09_30_drive_0027",
+        "2011_09_30_drive_0033",
+        "2011_09_30_drive_0034",
+        "2011_10_03_drive_0027",
+        "2011_10_03_drive_0042"
+      ],
+      "lidar_period_s": 0.10373389720916926,
+      "scales": {
+        "B2: Seam only": [
+          0.08615410254629363,
+          0.3447147527762181
+        ],
+        "B3: Residuals only": [
+          0.12711645714268613,
+          0.25940156142139026
+        ],
+        "FreshScan": [
+          0.12711645714268613,
+          0.25940156142139026,
+          0.08615410254629363,
+          0.3447147527762181
+        ]
+      },
+      "thresholds": {
+        "B2: Seam only": 1.0403315353119051,
+        "B3: Residuals only": 1.3155603461413166,
+        "FreshScan": 1.3967004263227563,
+        "B1: Timestamp check": 0.0006653356552105543,
+        "seam_alarm": 1.4203661250382458
+      }
+    }
+  },
+  "run_info": {
+    "2011_09_30_drive_0018": {
+      "icp_backend": "cuda",
+      "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+      "cpu_count": 2,
+      "gpu": "Tesla T4",
+      "python": "3.13.15",
+      "time": "2026-10-08 18:47:57",
+      "open3d": "0.20.0",
+      "numpy": "2.1.3"
+    },
+    "2011_09_30_drive_0020": {
+      "icp_backend": "cuda",
+      "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+      "cpu_count": 2,
+      "gpu": "Tesla T4",
+      "python": "3.13.15",
+      "time": "2026-10-08 18:36:05",
+      "open3d": "0.20.0",
+      "numpy": "2.1.3"
+    },
+    "2011_09_30_drive_0027": {
+      "icp_backend": "cuda",
+      "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+      "cpu_count": 2,
+      "gpu": "Tesla T4",
+      "python": "3.13.15",
+      "time": "2026-10-08 19:01:58",
+      "open3d": "0.20.0",
+      "numpy": "2.1.3"
+    },
+    "2011_09_30_drive_0033": {
+      "icp_backend": "cuda",
+      "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+      "cpu_count": 2,
+      "gpu": "Tesla T4",
+      "python": "3.13.15",
+      "time": "2026-10-08 18:39:26",
+      "open3d": "0.20.0",
+      "numpy": "2.1.3"
+    },
+    "2011_09_30_drive_0034": {
+      "icp_backend": "cuda",
+      "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+      "cpu_count": 2,
+      "gpu": "Tesla T4",
+      "python": "3.13.15",
+      "time": "2026-10-08 19:08:10",
+      "open3d": "0.20.0",
+      "numpy": "2.1.3"
+    },
+    "2011_10_03_drive_0027": {
+      "icp_backend": "cuda",
+      "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+      "cpu_count": 2,
+      "gpu": "Tesla T4",
+      "python": "3.13.15",
+      "time": "2026-10-08 19:22:08",
+      "open3d": "0.20.0",
+      "numpy": "2.1.3"
+    },
+    "2011_10_03_drive_0042": {
+      "icp_backend": "cuda",
+      "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+      "cpu_count": 2,
+      "gpu": "Tesla T4",
+      "python": "3.13.15",
+      "time": "2026-10-08 18:41:51",
+      "open3d": "0.20.0",
+      "numpy": "2.1.3"
+    }
+  }
+}

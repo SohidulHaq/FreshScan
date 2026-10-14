@@ -1,0 +1,24 @@
+{
+  "replay_drive": {
+    "stream": "2011_09_30_drive_0018__replay_R10_s0",
+    "minutes": 4.77,
+    "windows": 12
+  },
+  "motion": {
+    "frames": 13497,
+    "frames_moving": 13068,
+    "corr_speed": 0.9958,
+    "corr_yaw": 0.9972,
+    "speed_err_median_abs_mps": 0.3,
+    "speed_err_p95_abs_mps": 0.904,
+    "yaw_err_median_abs_deg_s": 0.304,
+    "yaw_err_p95_abs_deg_s": 1.391
+  },
+  "bev": {
+    "drive": "2011_09_30_drive_0034",
+    "frame": 547,
+    "speed_mps": 7.5,
+    "overlap_fresh_pct": 94.8,
+    "overlap_10s_pct": 48.6
+  }
+}

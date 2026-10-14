@@ -1,0 +1,57 @@
+# FreshScan - experiment configuration
+# All paths are relative to the repository root unless absolute.
+
+kitti_root: data/kitti_raw          # where scripts/00_download_kitti.sh unpacks the drives
+results_dir: results
+
+# Drives (KITTI raw "synced + rectified"). Long drives are needed for replay ages up to 30 s.
+# These long drives are a suggestion; any synced drive with >= 1000 frames works.
+# Calibration drives are used ONLY to fit benign statistics and thresholds.
+# Evaluation protocol: leave_one_drive_out (each test drive is calibrated on the benign
+# streams of all other drives; no attack data) or fixed (calibrate once on calibration_drives).
+protocol: leave_one_drive_out
+
+calibration_drives:
+  - 2011_09_30_drive_0020
+  - 2011_09_30_drive_0033
+  - 2011_10_03_drive_0042
+test_drives:
+  - 2011_09_30_drive_0018
+  - 2011_09_30_drive_0027
+  - 2011_09_30_drive_0034
+  - 2011_10_03_drive_0027
+
+# Replay attack settings
+replay:
+  ages_s: [5, 10, 30]       # replay age R in seconds
+  win_min_s: 2.0
+  win_max_s: 10.0
+  gap_s: 10.0
+  seeds: [0, 1, 2]
+
+# FreshScan parameters. Tune on calibration drives only.
+freshscan:
+  period_s: 0.1             # LiDAR period Delta
+  r_min: 3.0                # range crop [m]
+  r_max: 60.0
+  voxel: 0.5                # voxel size delta [m]
+  d_max: 1.0                # ICP match distance [m]
+  icp_iters: 50
+  icp_backend: auto          # auto | cuda | open3d | numpy  (same result, different speed)
+  fit_reset: 0.5            # restart ICP from identity if the previous fitness was below this
+  v0: 3.0                   # speed offset of the speed residual [m/s]
+  smooth_frames: 3          # motion checks use the mean of the last k slots (causal)
+  v_min: 2.0                # motion checks abstain below this reference speed [m/s] (P3)
+  lidar_period_s: auto      # real scan period; "auto" = median header step on benign calibration drives
+  w0: 0.05                  # yaw-rate offset [rad/s]: yaw residual is relative, like the speed residual
+  seam_alarm_fpr: 0.001     # one scan whose ICP fit is this unusual (0.1% of benign scans) raises an alarm at once
+  percentile: 99.0          # benign percentile used to normalize each feature
+  target_fpr: 0.01          # threshold eta is set for this benign false-positive rate
+  m: 2                      # m-of-n alarm rule
+  n: 3
+
+# Bins for the RQ3 analysis
+rq3:
+  replay_age_s: 10
+  dv_bins: [0.5, 2.0]       # |v(t) - v(t-R)| edges [m/s]
+  speed_bins: [1.0, 10.0]   # current speed edges [m/s]

@@ -1,0 +1,2 @@
+protocol,calibration_drives,drives_per_fold,calibration_frames_per_fold_mean,test_drives,test_frames,test_minutes,seeds,threshold_eta_mean,seam_threshold_mean,lidar_period_ms,benign_test_checked_pct,benign_test_fpr_pct
+leave_one_drive_out,3,6,11089,4,9632,16.7,3,1.355532554620073,1.3948065386855126,103.75,95.6,1.3

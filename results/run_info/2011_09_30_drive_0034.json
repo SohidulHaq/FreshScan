@@ -1,0 +1,10 @@
+{
+  "icp_backend": "cuda",
+  "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+  "cpu_count": 2,
+  "gpu": "Tesla T4",
+  "python": "3.13.15",
+  "time": "2026-10-08 19:08:10",
+  "open3d": "0.20.0",
+  "numpy": "2.1.3"
+}
